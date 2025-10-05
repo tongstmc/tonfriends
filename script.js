@@ -33,6 +33,33 @@ function copyContract(button) {
     });
 }
 
+// Copy hero contract address functionality
+function copyHeroContract(element) {
+    const contractText = element.querySelector('.contract-text').textContent;
+    const copyIcon = element.querySelector('.copy-icon');
+    
+    navigator.clipboard.writeText(contractText).then(() => {
+        // Change icon temporarily
+        const originalIcon = copyIcon.textContent;
+        copyIcon.textContent = '✓';
+        element.style.borderColor = '#00D4AA';
+        element.style.boxShadow = '0 0 30px rgba(0, 212, 170, 0.6)';
+        
+        setTimeout(() => {
+            copyIcon.textContent = originalIcon;
+            element.style.borderColor = '';
+            element.style.boxShadow = '';
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy:', err);
+        // Show error feedback
+        copyIcon.textContent = '❌';
+        setTimeout(() => {
+            copyIcon.textContent = '📋';
+        }, 2000);
+    });
+}
+
 // Navbar scroll effect
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');

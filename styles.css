@@ -227,6 +227,9 @@ body {
     z-index: 1;
     text-align: center;
     padding: 100px 20px 50px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .hero-title {
@@ -276,7 +279,88 @@ body {
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.hero-contract {
+    max-width: 600px;
+    margin: 0 auto 50px;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.hero-contract label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-contract-address {
+    background: linear-gradient(135deg, rgba(123, 104, 238, 0.2), rgba(79, 195, 247, 0.2));
+    border: 2px solid var(--solana-purple);
+    padding: 15px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-contract-address::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.hero-contract-address:hover::before {
+    left: 100%;
+}
+
+.hero-contract-address:hover {
+    border-color: var(--solana-blue);
+    box-shadow: 0 0 30px rgba(79, 195, 247, 0.4);
+    transform: translateY(-2px);
+}
+
+.hero-contract-address:active {
+    transform: translateY(0);
+    box-shadow: 0 0 20px rgba(79, 195, 247, 0.6);
+}
+
+.contract-text {
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.copy-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    transition: transform 0.3s;
+}
+
+.hero-contract-address:hover .copy-icon {
+    transform: scale(1.2);
 }
 
 .btn {
@@ -1356,6 +1440,25 @@ section {
     .btn {
         width: 100%;
         justify-content: center;
+    }
+    
+    .hero-contract {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    .hero-contract-address {
+        padding: 12px 12px;
+        gap: 10px;
+    }
+    
+    .contract-text {
+        font-size: 0.7rem;
+        min-width: 0;
+    }
+    
+    .copy-icon {
+        font-size: 1.1rem;
     }
     
     .hero-stats {
