@@ -1,4 +1,3 @@
-/* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -35,7 +34,6 @@ body {
     padding: 0 20px;
 }
 
-/* Navigation */
 .navbar {
     position: fixed;
     top: 0;
@@ -167,7 +165,6 @@ body {
     filter: brightness(1.3) drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
 }
 
-/* Hero Section */
 .hero {
     position: relative;
     min-height: 100vh;
@@ -540,7 +537,6 @@ body {
     50% { transform: translateY(10px); }
 }
 
-/* Section Styles */
 section {
     padding: 100px 0;
     position: relative;
@@ -579,7 +575,6 @@ section {
     background-clip: text;
 }
 
-/* Lore Section */
 .lore {
     background: linear-gradient(180deg, var(--dark-bg) 0%, #1a1a30 50%, var(--dark-bg) 100%);
 }
@@ -682,7 +677,6 @@ section {
     font-style: italic;
 }
 
-/* Token Alliance Section */
 .tokens {
     background: var(--darker-bg);
 }
@@ -859,7 +853,6 @@ section {
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
 }
 
-/* Tokenomics Section */
 .tokenomics {
     background: linear-gradient(180deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
 }
@@ -1009,7 +1002,6 @@ section {
     border-left: 4px solid var(--solana-green);
 }
 
-/* Roadmap Section */
 .roadmap {
     background: var(--dark-bg);
 }
@@ -1120,7 +1112,6 @@ section {
     font-style: italic;
 }
 
-/* Community Section */
 .community {
     background: linear-gradient(180deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
 }
@@ -1340,11 +1331,43 @@ section {
     margin-top: 10px;
 }
 
-/* Footer */
 .footer {
     background: var(--darker-bg);
     border-top: 2px solid var(--solana-purple);
     padding: 30px 0;
+}
+
+.footer-easter-egg {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, rgba(123, 104, 238, 0.1), rgba(79, 195, 247, 0.1));
+    border-radius: 15px;
+    border: 2px dashed var(--solana-blue);
+}
+
+.footer-easter-egg p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.konami-hint {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    color: var(--solana-blue);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% { 
+        text-shadow: 0 0 5px rgba(79, 195, 247, 0.5);
+    }
+    50% { 
+        text-shadow: 0 0 20px rgba(79, 195, 247, 0.8), 0 0 30px rgba(79, 195, 247, 0.6);
+    }
 }
 
 .footer-content {
@@ -1427,9 +1450,6 @@ section {
     margin: 0;
 }
 
-/* Responsive Design */
-
-/* Tablets and small laptops */
 @media (max-width: 1024px) {
     .hero-title {
         font-size: 3rem;
@@ -1453,9 +1473,7 @@ section {
     }
 }
 
-/* Mobile devices */
 @media (max-width: 768px) {
-    /* Navigation */
     .nav-container {
         padding: 10px 15px;
         display: flex;
@@ -1520,7 +1538,6 @@ section {
         border-bottom: none;
     }
     
-    /* Hero Section */
     .hero {
         padding: 80px 20px 50px;
     }
@@ -1611,7 +1628,6 @@ section {
         height: 50px;
     }
     
-    /* Sections */
     section {
         padding: 60px 0;
     }
@@ -1626,7 +1642,6 @@ section {
         margin-bottom: 40px;
     }
     
-    /* Lore */
     .lore-story {
         padding: 25px;
     }
@@ -1644,7 +1659,6 @@ section {
         height: 60px;
     }
     
-    /* Token Cards */
     .token-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -1667,7 +1681,6 @@ section {
         font-size: 0.75rem;
     }
     
-    /* Tokenomics */
     .tokenomics-card {
         padding: 25px;
     }
@@ -1691,7 +1704,6 @@ section {
         grid-template-columns: 1fr;
     }
     
-    /* Community */
     .community-stats {
         flex-direction: column;
         gap: 30px;
@@ -1713,9 +1725,24 @@ section {
         justify-content: center;
     }
     
-    /* Footer */
     .footer {
         padding: 20px 0;
+    }
+    
+    .footer-easter-egg {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .footer-easter-egg p {
+        font-size: 0.85rem;
+    }
+    
+    .konami-hint {
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        display: block;
+        margin-top: 5px;
     }
     
     .footer-bottom p {
@@ -1723,9 +1750,7 @@ section {
     }
 }
 
-/* Small mobile devices */
 @media (max-width: 480px) {
-    /* Hero */
     .hero-title {
         font-size: 1.5rem;
     }
@@ -1744,7 +1769,6 @@ section {
         height: 40px;
     }
     
-    /* Sections */
     .section-title {
         font-size: 1.5rem;
         flex-direction: column;
@@ -1759,7 +1783,6 @@ section {
         font-size: 0.9rem;
     }
     
-    /* Lore */
     .lore-story {
         padding: 20px;
     }
@@ -1768,7 +1791,6 @@ section {
         font-size: 0.95rem;
     }
     
-    /* Token Cards */
     .token-card {
         padding: 15px;
     }
@@ -1790,7 +1812,6 @@ section {
         font-size: 0.9rem;
     }
     
-    /* Tokenomics */
     .vision-core {
         width: 180px;
         height: 180px;
@@ -1810,7 +1831,6 @@ section {
         padding: 10px;
     }
     
-    /* Community */
     .community-cta h3 {
         font-size: 1.8rem;
     }
@@ -1820,14 +1840,12 @@ section {
         font-size: 1rem;
     }
     
-    /* Footer */
     .footer-bottom p {
         font-size: 0.75rem;
         line-height: 1.5;
     }
 }
 
-/* Extra small devices */
 @media (max-width: 360px) {
     .hero-title {
         font-size: 1.2rem;

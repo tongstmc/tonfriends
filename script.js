@@ -1,4 +1,3 @@
-// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -12,7 +11,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Copy contract address functionality
 function copyContract(button) {
     const input = button.previousElementSibling;
     input.select();
@@ -33,13 +31,11 @@ function copyContract(button) {
     });
 }
 
-// Copy hero contract address functionality
 function copyHeroContract(element) {
     const contractText = element.querySelector('.contract-text').textContent;
     const copyIcon = element.querySelector('.copy-icon');
     
     navigator.clipboard.writeText(contractText).then(() => {
-        // Change icon temporarily
         const originalIcon = copyIcon.textContent;
         copyIcon.textContent = '✓';
         element.style.borderColor = '#00D4AA';
@@ -52,7 +48,6 @@ function copyHeroContract(element) {
         }, 2000);
     }).catch(err => {
         console.error('Failed to copy:', err);
-        // Show error feedback
         copyIcon.textContent = '❌';
         setTimeout(() => {
             copyIcon.textContent = '📋';
@@ -60,7 +55,6 @@ function copyHeroContract(element) {
     });
 }
 
-// Navbar scroll effect
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
 
@@ -76,7 +70,6 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Animated counter for stats
 function animateCounter(element, target, duration = 2000) {
     let current = 0;
     const increment = target / (duration / 16);
@@ -95,7 +88,6 @@ function animateCounter(element, target, duration = 2000) {
     }, 16);
 }
 
-// Intersection Observer for animations
 const observerOptions = {
     threshold: 0.2,
     rootMargin: '0px 0px -100px 0px'
@@ -107,7 +99,6 @@ const observer = new IntersectionObserver((entries) => {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
             
-            // Animate counters when they come into view
             if (entry.target.classList.contains('stat-value') || 
                 entry.target.classList.contains('stat-number')) {
                 const target = entry.target.textContent.trim();
@@ -120,9 +111,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    // Add initial animation state
     const animatedElements = document.querySelectorAll(
         '.token-card, .character-card, .tokenomics-card, .roadmap-phase, .mini-meme'
     );
@@ -134,12 +123,10 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
     
-    // Observe stat counters
     const statElements = document.querySelectorAll('.stat-value, .stat-number');
     statElements.forEach(el => observer.observe(el));
 });
 
-// Meme carousel functionality
 let currentMemeIndex = 0;
 const memes = [
     {
@@ -185,7 +172,6 @@ function updateMeme(index) {
     }
 }
 
-// Carousel controls
 document.querySelector('.carousel-btn.prev')?.addEventListener('click', () => {
     currentMemeIndex = (currentMemeIndex - 1 + memes.length) % memes.length;
     updateMeme(currentMemeIndex);
@@ -196,13 +182,11 @@ document.querySelector('.carousel-btn.next')?.addEventListener('click', () => {
     updateMeme(currentMemeIndex);
 });
 
-// Auto-rotate memes
 setInterval(() => {
     currentMemeIndex = (currentMemeIndex + 1) % memes.length;
     updateMeme(currentMemeIndex);
 }, 5000);
 
-// Add parallax effect to floating memes
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const floatingMemes = document.querySelectorAll('.floating-meme');
@@ -213,7 +197,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Token card hover effects
 document.querySelectorAll('.token-card').forEach(card => {
     card.addEventListener('mouseenter', function() {
         this.style.zIndex = '10';
@@ -224,7 +207,6 @@ document.querySelectorAll('.token-card').forEach(card => {
     });
 });
 
-// Add glitch effect to title on hover
 const glitchElements = document.querySelectorAll('.glitch');
 glitchElements.forEach(element => {
     element.addEventListener('mouseenter', function() {
@@ -236,7 +218,6 @@ glitchElements.forEach(element => {
     });
 });
 
-// Random floating animation for vision branches
 document.querySelectorAll('.branch-node').forEach((node, index) => {
     const randomDelay = Math.random() * 2;
     const randomDuration = 3 + Math.random() * 2;
@@ -244,7 +225,6 @@ document.querySelectorAll('.branch-node').forEach((node, index) => {
     node.style.animationDuration = `${randomDuration}s`;
 });
 
-// Easter egg: Konami code
 let konamiCode = [];
 const konamiSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 
@@ -258,36 +238,36 @@ document.addEventListener('keydown', (e) => {
 });
 
 function activateEasterEgg() {
-    // Create a shower of emojis
-    const emojis = ['🌟', '🔥', '🍒', '🦆', '💎', '🚀', '🌙', '⚡'];
+    const logos = ['buddy-logo.png', 'redo-logo.png', 'cherry-logo.png', 'utya-logo.png'];
     
     for (let i = 0; i < 50; i++) {
         setTimeout(() => {
-            const emoji = document.createElement('div');
-            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-            emoji.style.position = 'fixed';
-            emoji.style.left = Math.random() * window.innerWidth + 'px';
-            emoji.style.top = '-50px';
-            emoji.style.fontSize = '3rem';
-            emoji.style.zIndex = '9999';
-            emoji.style.pointerEvents = 'none';
-            emoji.style.transition = 'all 3s ease-in';
+            const logo = document.createElement('img');
+            logo.src = logos[Math.floor(Math.random() * logos.length)];
+            logo.style.position = 'fixed';
+            logo.style.left = Math.random() * window.innerWidth + 'px';
+            logo.style.top = '-100px';
+            logo.style.width = '60px';
+            logo.style.height = '60px';
+            logo.style.zIndex = '9999';
+            logo.style.pointerEvents = 'none';
+            logo.style.transition = 'all 3s ease-in';
+            logo.style.objectFit = 'contain';
             
-            document.body.appendChild(emoji);
+            document.body.appendChild(logo);
             
             setTimeout(() => {
-                emoji.style.top = window.innerHeight + 'px';
-                emoji.style.transform = `rotate(${Math.random() * 720}deg)`;
-                emoji.style.opacity = '0';
+                logo.style.top = window.innerHeight + 'px';
+                logo.style.transform = `rotate(${Math.random() * 720}deg)`;
+                logo.style.opacity = '0';
             }, 100);
             
             setTimeout(() => {
-                emoji.remove();
+                logo.remove();
             }, 3100);
         }, i * 50);
     }
     
-    // Show message
     const message = document.createElement('div');
     message.textContent = '🎉 FELLOWSHIP ACTIVATED! 🎉';
     message.style.position = 'fixed';
@@ -313,7 +293,6 @@ function activateEasterEgg() {
     }, 2000);
 }
 
-// Add loading animation
 window.addEventListener('load', () => {
     document.body.style.opacity = '0';
     document.body.style.transition = 'opacity 0.5s';
@@ -324,7 +303,6 @@ window.addEventListener('load', () => {
 });
 
 
-// Mobile menu toggle
 const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 const navMenu = document.querySelector('.nav-menu');
 
@@ -334,7 +312,6 @@ if (mobileMenuToggle && navMenu) {
         navMenu.classList.toggle('active');
     });
     
-    // Close menu when clicking on a link
     const navLinks = document.querySelectorAll('.nav-menu a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
