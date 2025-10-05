@@ -400,6 +400,77 @@ body {
     box-shadow: 0 0 50px rgba(79, 195, 247, 0.6);
 }
 
+.btn-tertiary {
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-3));
+    color: var(--dark-bg);
+    box-shadow: 0 0 30px rgba(255, 107, 107, 0.4);
+    font-weight: 700;
+}
+
+.btn-tertiary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 50px rgba(255, 230, 109, 0.6);
+}
+
+.btn-dual {
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-3));
+    color: white;
+    box-shadow: 0 0 30px rgba(255, 107, 107, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+.btn-dual:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 50px rgba(255, 230, 109, 0.6);
+}
+
+.btn-dual-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-dual-label {
+    font-weight: 700;
+    color: var(--dark-bg);
+    white-space: nowrap;
+}
+
+.btn-dual-separator {
+    color: rgba(0, 0, 0, 0.3);
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.btn-dual-part {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: var(--dark-bg);
+    font-weight: 700;
+    transition: all 0.2s;
+    padding: 5px 10px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.btn-dual-part:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.btn-dual-maestro:hover {
+    background: rgba(123, 104, 238, 0.3);
+}
+
+.btn-dual-dtrade:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
 .btn-icon {
     font-size: 1.3rem;
 }
@@ -409,6 +480,16 @@ body {
     height: 24px;
     object-fit: contain;
     filter: brightness(1.1);
+}
+
+.btn-dual-maestro .btn-icon-img {
+    width: 22px;
+    height: 22px;
+}
+
+.btn-dual-dtrade .btn-icon-img {
+    width: 32px;
+    height: 32px;
 }
 
 .hero-stats {
@@ -1440,6 +1521,38 @@ section {
     .btn {
         width: 100%;
         justify-content: center;
+    }
+    
+    .btn-dual {
+        width: 100%;
+        flex-direction: column;
+        gap: 6px;
+        padding: 10px 20px;
+    }
+    
+    .btn-dual-row {
+        display: flex;
+        width: 100%;
+        gap: 10px;
+        justify-content: center;
+    }
+    
+    .btn-dual-label {
+        font-size: 0.85rem;
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+    
+    .btn-dual-separator {
+        font-size: 1.2rem;
+    }
+    
+    .btn-dual-part {
+        font-size: 0.8rem;
+        flex: 1;
+        justify-content: center;
+        padding: 6px 12px;
     }
     
     .hero-contract {
