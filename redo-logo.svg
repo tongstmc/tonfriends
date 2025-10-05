@@ -1,0 +1,14 @@
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Black Hood (REDO) -->
+  <path d="M 40 15 L 25 35 L 25 60 Q 25 65 30 65 L 50 65 Q 55 65 55 60 L 55 35 Z" fill="#2C3E50"/>
+  <ellipse cx="40" cy="45" rx="18" ry="20" fill="#34495E"/>
+  <circle cx="40" cy="50" r="12" fill="#ECF0F1"/>
+  <circle cx="40" cy="50" r="6" fill="#2C3E50"/>
+  <path d="M 30 35 Q 40 25 50 35" fill="#1A252F"/>
+  <ellipse cx="32" cy="40" rx="3" ry="5" fill="#1A252F" opacity="0.5"/>
+  <ellipse cx="48" cy="40" rx="3" ry="5" fill="#1A252F" opacity="0.5"/>
+  <!-- Fire effect -->
+  <path d="M 40 20 Q 35 15 37 10 Q 40 12 40 8 Q 42 12 45 10 Q 43 15 40 20 Z" fill="#E74C3C" opacity="0.7"/>
+  <path d="M 40 18 Q 38 15 39 12 Q 40 13 40 10 Q 41 13 42 12 Q 41 15 40 18 Z" fill="#F39C12" opacity="0.8"/>
+</svg>
+
